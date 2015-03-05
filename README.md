@@ -1,5 +1,11 @@
 # Coupons
 
+[![Build Status](https://img.shields.io/travis/fnando/coupons/master.svg)](https://travis-ci.org/fnando/coupons)
+[![Code Climate](https://img.shields.io/codeclimate/github/fnando/coupons.svg)](https://codeclimate.com/github/fnando/coupons)
+[![Test Coverage](https://img.shields.io/codeclimate/coverage/github/fnando/coupons.svg)](https://codeclimate.com/github/fnando/coupons)
+[![Gem Version](https://img.shields.io/gem/v/coupons.svg)](https://rubygems.org/gems/coupons)
+[![Dependencies](https://img.shields.io/gemnasium/fnando/coupons.svg)](https://rubygems.org/gems/coupons)
+
 TODO: Write a gem description
 
 ## Installation
