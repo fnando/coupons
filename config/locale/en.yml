@@ -48,6 +48,7 @@ en:
     titles:
       coupons: Coupons
       coupons_new: New Coupon
+      coupons_edit: Edit Coupon
 
     labels:
       coupon:
@@ -56,6 +57,8 @@ en:
         type: 'Type'
         amount: 'Amount'
         code: 'Discount Code'
+        valid_from: 'Valid From'
+        valid_until: 'Valid Until'
 
     hints:
       coupon:
@@ -64,7 +67,8 @@ en:
         description: 'Describe this coupon, so you can remember why it exists.'
         redemption_limit: 'Set how many times this coupon can be used. Zero means no limit.'
         amount: 'This is the actual discount amount. 0-100 for percentage, zero or positive number for amount.'
-        expires_on: 'When will this coupon expire. By default, it does not expire.'
+        valid_from: 'When this coupon will be available.'
+        valid_until: 'When will this coupon expire. By default, it does not expire.'
 
     form_error_description: 'You must double check the form:'
 
@@ -85,3 +89,4 @@ en:
     errors:
       messages:
         coupon_already_expired: must be equal to or greater than today
+        coupon_valid_until: must be greater than or equal to valid from date.

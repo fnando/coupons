@@ -1,5 +1,7 @@
+system 'rm /tmp/coupons.sqlite3 &> /dev/null'
+
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __FILE__)
-ActiveRecord::Migrator.migrations_paths << File.expand_path('../spec/db/migrate', __FILE__)
+ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths)
 ActiveRecord::Migration.maintain_test_schema!
 

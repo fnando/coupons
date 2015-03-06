@@ -10,11 +10,12 @@ module Coupons
       # Set default values.
       after_initialize do
         self.code ||= Coupons.configuration.generator.call
+        self.valid_from ||= Date.current
       end
 
       has_many :redemptions, class_name: 'Coupons::Models::CouponRedemption'
 
-      validates_presence_of :code
+      validates_presence_of :code, :valid_from
       validates_inclusion_of :type, in: %w[percentage amount]
 
       serialize :attachments, GlobalidSerializer
@@ -33,7 +34,7 @@ module Coupons
       validates_numericality_of :redemption_limit,
         greater_than_or_equal_to: 0
 
-      validate :validate_expires_on
+      validate :validate_dates
 
       def apply(options)
         input_amount = BigDecimal("#{options[:amount]}")
@@ -54,11 +55,11 @@ module Coupons
       end
 
       def expired?
-        expires_on && expires_on <= Date.current
+        valid_until && valid_until <= Date.current
       end
 
       def redeemable?
-        !expired? && redemption_count < redemption_limit
+        !expired? && redemption_count < redemption_limit && valid_from <= Date.current
       end
 
       def to_partial_path
@@ -79,10 +80,15 @@ module Coupons
         BigDecimal("#{input_amount}") * (BigDecimal("#{amount}") / 100)
       end
 
-      def validate_expires_on
-        return if expires_on_before_type_cast.blank?
-        errors.add(:expires_on, :invalid) unless expires_on.kind_of?(Date)
-        errors.add(:expires_on, :coupon_already_expired) if expires_on? && expires_on < Date.current
+      def validate_dates
+        if valid_until_before_type_cast.present?
+          errors.add(:valid_until, :invalid) unless valid_until.kind_of?(Date)
+          errors.add(:valid_until, :coupon_already_expired) if valid_until? && valid_until < Date.current
+        end
+
+        if valid_from.present? && valid_until.present?
+          errors.add(:valid_until, :coupon_valid_until) if valid_until < valid_from
+        end
       end
     end
   end
