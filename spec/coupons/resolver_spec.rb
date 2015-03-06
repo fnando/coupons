@@ -12,10 +12,6 @@ describe Coupons::Resolver do
     Coupons.configuration.resolvers = [CategoryResolver.new]
   end
 
-  after do
-    Coupons.configuration.resolvers = [Coupons::Resolver.new]
-  end
-
   it 'applies discount to category' do
     coupon = create_coupon(type: 'amount', amount: 1, attachments: {category: ruby_category})
     options = coupon_maker.apply(coupon.code, amount: all_about_rails.price, category: ruby_category)

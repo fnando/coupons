@@ -3,4 +3,12 @@ class Coupons::ApplicationController < ActionController::Base
 
   include Coupons::Models
   helper Coupons::ApplicationHelper
+
+  before_action :authorize
+
+  private
+
+  def authorize
+    Coupons.configuration.authorizer.call(self)
+  end
 end

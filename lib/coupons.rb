@@ -27,9 +27,4 @@ module Coupons
 
   # Initialize the default configuration object.
   self.configuration = Configuration.new
-
-  configure do |config|
-    config.generator = Generator.new
-    config.resolvers = [Resolver.new]
-  end
 end
