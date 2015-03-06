@@ -14,3 +14,4 @@
 mkmf.log
 log
 *.log
+*.sqlite3
