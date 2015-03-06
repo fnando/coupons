@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'codeclimate-test-reporter'
   spec.add_development_dependency 'pry-meta'
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'generator_spec'
 end

@@ -5,6 +5,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative 'dummy/config/application'
 require 'rspec/rails'
 require 'coupons'
+require 'generator_spec'
+require 'generators/coupons/install/install_generator'
 
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __FILE__)
 

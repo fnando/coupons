@@ -1,5 +1,4 @@
-require 'coupons/version'
-
 module Coupons
-  # Your code goes here...
+  require 'coupons/version'
+  require 'coupons/railtie'
 end
