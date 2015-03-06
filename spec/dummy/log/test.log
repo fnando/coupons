@@ -1,0 +1,51 @@
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 8ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+Processing by AnonymousController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)

@@ -7,6 +7,10 @@ rvm:
   - 2.1
   - 2.2
 
+gemfile:
+  - Gemfile
+  - gemfiles/rails_4_2.gemfile
+
 addons:
   code_climate:
     repo_token:
