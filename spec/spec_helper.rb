@@ -9,14 +9,7 @@ require 'generator_spec'
 require 'generators/coupons/install/install_generator'
 require 'database_cleaner'
 
-ActiveRecord::Migrator.migrations_paths << File.expand_path('../db/migrate', __FILE__)
-ActiveRecord::Migrator.migrations_paths << File.expand_path('../spec/db/migrate', __FILE__)
-ActiveRecord::Migrator.migrate(ActiveRecord::Migrator.migrations_paths) if ActiveRecord::Migrator.needs_migration?
-ActiveRecord::Migration.maintain_test_schema!
-
-class ActiveRecord::Base
-  include GlobalID::Identification unless ancestors.include?(GlobalID::Identification)
-end
+require_relative 'support/active_record'
 
 Dir['./spec/support/**/*.rb'].each do |file|
   require file

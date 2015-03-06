@@ -1,0 +1,56 @@
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  margin: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.button:not(.secondary) {
+  font-weight: bold;
+  padding: 15px 25px;
+}
+
+.button.secondary {
+  font-size: $font-size-small;
+  font-weight: bold;
+  padding: 8px 10px;
+}
+
+.button.rounded {
+  border-radius: 3px;
+}
+
+.button.green {
+  background: #33c08b;
+  color: #fff;
+}
+
+.button.blue {
+  background: #327dbb;
+  color: #fff;
+}
+
+.button.orange {
+  background: #f69f09;
+  color: #fff;
+}
+
+.button:not(.secondary).red {
+  background: #bf3604;
+  color: #fff;
+}
+
+.button.secondary.red {
+  background: transparent;
+  border: 1px solid #bf3604;
+  color: #bf3604;
+}
+
+.button.secondary.gray {
+  background: transparent;
+  border: 1px solid $gray;
+  color: $gray;
+}

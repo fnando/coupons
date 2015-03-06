@@ -1,0 +1,18 @@
+<% content_for(:page_title) { t('coupons.titles.coupons_remove') } %>
+
+<div class="panel">
+  <div class="panel-title">
+    Are you sure you want to remove <strong>this coupon</strong>?
+  </div>
+
+  <div class="panel-body">
+    <p>
+      All redemption trackings will be removed as well. <strong>You won't be able to undo this action.</strong>
+    </p>
+
+    <p>
+      <%= button_to t('coupons.actions.confirm'), coupon_path(@coupon), method: 'delete', class: 'button rounded red' %>
+      <%= link_to t('coupons.actions.cancel'), coupons_path %>
+    </p>
+  </div>
+</div>

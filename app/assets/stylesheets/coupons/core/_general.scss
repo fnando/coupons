@@ -1,0 +1,31 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* > :first-child {
+  margin-top: 0;
+}
+
+* > :last-child {
+  margin-bottom: 0;
+}
+
+body {
+  background: #ebedf7;
+  font-family: sans-serif;
+  line-height: 1.4;
+  padding: 50px;
+  padding-bottom: 100px;
+}
+
+.translation_missing {
+  outline: 2px solid red;
+}
+
+a {
+  color: #03c;
+}

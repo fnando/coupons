@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th {
+  text-align: left;
+  border-bottom: 2px solid $gray;
+}
+
+td,
+th {
+  padding: 10px;
+}
+
+tbody tr + tr td {
+  border-top: 1px solid $gray-light;
+}
+
+tbody tr:hover td {
+  background: rgba(#ffc, .5);
+}

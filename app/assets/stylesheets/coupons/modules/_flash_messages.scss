@@ -1,0 +1,37 @@
+.flash-message {
+  margin: 0 -30px 0 -30px;
+  position: relative;
+  top: -32px;
+  font-weight: bold;
+  position: relative;
+}
+
+.flash-message > p {
+  padding: 15px 30px;
+  margin: 0;
+}
+
+.flash-message.notice {
+  background: #33c08b;
+  color: #fff;
+}
+
+.flash-message.alert {
+  background: #bf3604;
+  color: #fff;
+}
+
+.flash-message-close {
+  font-weight: bold;
+  font-size: 30px;
+  color: rgba(#000, .3);
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translatey(-50%);
+
+  &:hover {
+    color: rgba(#000, .5);
+  }
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="19px" viewBox="0 0 18 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>checkbox</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="checkbox" sketch:type="MSLayerGroup">
+            <path d="M14.76,0 L3.24,0 C1.458,0 0,1.539 0,3.42026389 L0,15.5802639 C0,17.461 1.458,19 3.24,19 L14.76,19 C16.542,19 18,17.461 18,15.5802639 L18,3.42026389 C18,1.539 16.542,0 14.76,0 L14.76,0 Z" id="box" fill="#E4E7E9" sketch:type="MSShapeGroup"></path>
+            <path d="M14.6388745,7.04843979 L8.40887454,13.6403842 C8.22937454,13.8301203 7.87487454,13.985287 7.62087454,13.985287 L7.08262454,13.985287 C6.82862454,13.985287 6.47437454,13.8295926 6.29487454,13.6401203 L3.36112454,10.5286065 C3.18187454,10.3388703 3.18237454,10.0280092 3.36187454,9.83827312 L4.51637454,8.61989812 C4.69587454,8.43016201 4.99012454,8.43016201 5.16962454,8.61937034 L7.04437454,10.5940509 C7.22412454,10.7835231 7.51812454,10.7829953 7.69737454,10.5935231 L12.8351245,5.15741201 C13.0143745,4.9676759 13.3086245,4.96714812 13.4888745,5.15582868 L14.6373745,6.35995368 C14.8176245,6.54889812 14.8183745,6.85870368 14.6388745,7.04843979" id="mark" fill="#A1A0A0" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

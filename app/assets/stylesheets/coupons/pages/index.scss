@@ -1,0 +1,53 @@
+.mute {
+  color: $gray;
+}
+
+.checkbox {
+  width: 50px;
+}
+
+.actions {
+  width: 70px;
+}
+
+table .icon-button {
+  opacity: .3;
+}
+
+table tr:hover .icon-button {
+  opacity: 1;
+}
+
+.coupons-actions {
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -1px 3px rgba(#000, .2);
+  z-index: 1000;
+}
+
+.coupons-actions > .container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.coupons-actions .selected {
+  color: $gray;
+}
+
+.coupons-actions .selected,
+.coupons-actions-buttons {
+  flex: 0 0 50%;
+}
+
+.coupons-actions-buttons {
+  text-align: right;
+}
+
+.coupons-actions-buttons .button + .button {
+  margin-left: 15px;
+}

@@ -1,0 +1,19 @@
+.panel {
+  border: 1px solid $gray-light;
+  border-radius: 5px;
+  padding: 50px;
+  text-align: center;
+}
+
+.panel-title {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.panel-body {
+  color: $gray;
+}
+
+.panel p + p {
+  margin-top: 25px;
+}

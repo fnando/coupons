@@ -1,0 +1,6 @@
+<% content_for(:page_title) { t('coupons.titles.coupons_edit') } %>
+
+<%= form_for @coupon, as: 'coupon', url: coupon_path(@coupon), builder: Coupons::FormBuilder do |form| %>
+  <%= render 'form_errors', record: @coupon %>
+  <%= render 'form', form: form %>
+<% end %>

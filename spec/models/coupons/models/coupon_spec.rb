@@ -19,8 +19,33 @@ describe Coupons::Models::Coupon do
     expect(coupon.errors[:type]).not_to be_empty
   end
 
+  it 'requires valid expires on' do
+    coupon = create_coupon(expires_on: 'invalid')
+    expect(coupon.errors[:expires_on]).not_to be_empty
+  end
+
+  it 'accepts valid expires on' do
+    coupon = create_coupon(expires_on: Date.current)
+    expect(coupon.errors[:expires_on]).to be_empty
+
+    coupon = create_coupon(expires_on: DateTime.current)
+    expect(coupon.errors[:expires_on]).to be_empty
+
+    coupon = create_coupon(expires_on: Time.current)
+    expect(coupon.errors[:expires_on]).to be_empty
+
+    Time.zone = 'UTC'
+    coupon = create_coupon(expires_on: Time.zone.now)
+    expect(coupon.errors[:expires_on]).to be_empty
+  end
+
+  it 'rejects expires on' do
+    coupon = create_coupon(expires_on: 1.day.ago)
+    expect(coupon.errors[:expires_on]).not_to be_empty
+  end
+
   it 'requires valid range for percentage based coupons' do
-    coupon = create_coupon(amount: 0, type: 'percentage')
+    coupon = create_coupon(amount: -1, type: 'percentage')
     expect(coupon.errors[:amount]).not_to be_empty
 
     coupon = create_coupon(amount: 101, type: 'percentage')
@@ -31,7 +56,7 @@ describe Coupons::Models::Coupon do
   end
 
   it 'accepts amount for percentage based coupons' do
-    coupon = create_coupon(amount: 1, type: 'percentage')
+    coupon = create_coupon(amount: 0, type: 'percentage')
     expect(coupon.errors[:amount]).to be_empty
 
     coupon = create_coupon(amount: 100, type: 'percentage')
@@ -41,17 +66,17 @@ describe Coupons::Models::Coupon do
     expect(coupon.errors[:amount]).to be_empty
   end
 
-  it 'requires amount to be greater than zero for amount based coupons' do
-    coupon = create_coupon(amount: 0, type: 'amount')
+  it 'requires amount to be a positive number for amount based coupons' do
+    coupon = create_coupon(amount: -1, type: 'amount')
     expect(coupon.errors[:amount]).not_to be_empty
   end
 
-  it 'accepts amount greater than zero for amount based coupons' do
+  it 'accepts non-zero amount for amount based coupons' do
     coupon = create_coupon(amount: 1000, type: 'amount')
     expect(coupon.errors[:amount]).to be_empty
   end
 
-  it 'requires positive redemption limit' do
+  it 'requires non-zero redemption limit' do
     coupon = create_coupon(redemption_limit: -1)
     expect(coupon.errors[:redemption_limit]).not_to be_empty
 
@@ -78,7 +103,10 @@ describe Coupons::Models::Coupon do
   end
 
   it 'is not redeemable when is expired' do
-    coupon = create_coupon(amount: 100, type: 'amount', expires_on: 3.days.ago)
+    coupon = create_coupon(amount: 100, type: 'amount')
+    Coupons::Models::Coupon.update_all expires_on: 3.days.ago
+    coupon.reload
+
     expect(coupon.reload).not_to be_redeemable
   end
 

@@ -1,0 +1,20 @@
+.icon-button {
+  display: inline-block;
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.icon-button.edit {
+  background-image: image-url('coupons/cog.png');
+  width: 20px;
+  height: 20px;
+}
+
+.icon-button.remove {
+  background-image: image-url('coupons/remove.png');
+  width: 20px;
+  height: 20px;
+}

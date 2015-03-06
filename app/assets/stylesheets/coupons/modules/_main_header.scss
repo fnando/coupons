@@ -1,0 +1,17 @@
+.main-header {
+  padding: 30px;
+  border-bottom: 2px solid $gray-light;
+  display: flex;
+  align-items: center;
+}
+
+.main-header > h1 {
+  font-weight: normal;
+  color: #202020;
+  flex: 0 0 50%;
+}
+
+.main-header-actions {
+  flex: 0 0 50%;
+  text-align: right;
+}

@@ -1,0 +1,28 @@
+<tr class="coupon">
+  <td>
+    <%= check_box_tag 'coupon_ids[]', coupon.id %>
+  </td>
+
+  <td>
+    <span class="tag">
+      <%= coupon_discount(coupon) %>
+    </span>
+  </td>
+
+  <td>
+    <%= coupon_description(coupon) %>
+  </td>
+
+  <td class="text-center">
+    <%= redeemed(coupon) %>
+  </td>
+
+  <td class="text-center">
+    <%= expiration(coupon) %>
+  </td>
+
+  <td class="text-center">
+    <%= link_to t('coupons.actions.edit'), edit_coupon_path(coupon), class: 'icon-button edit', title: t('coupons.actions.edit') %>
+    <%= link_to t('coupons.actions.remove'), remove_coupon_path(coupon), class: 'icon-button remove', title: t('coupons.actions.remove') %>
+  </td>
+</tr>

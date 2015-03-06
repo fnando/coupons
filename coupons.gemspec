@@ -11,14 +11,20 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'http://rubygems.org/gems/coupons'
   spec.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = Dir[
+    '{app,config,db,lib,spec}/**/*',
+    '{Gemfile,Rakefile}',
+    '*.{txt,md,gemspec}'
+  ]
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'rails'
-  spec.add_development_dependency 'bundler', '~> 1.7'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_dependency 'rails', '>= 4.2.0', '< 5.0.0'
+  spec.add_dependency 'autoprefixer-rails'
+  spec.add_dependency 'sass-rails', '~> 5.0'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'codeclimate-test-reporter'
   spec.add_development_dependency 'pry-meta'
@@ -26,4 +32,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'generator_spec'
   spec.add_development_dependency 'database_cleaner'
   spec.add_development_dependency 'globalid'
+  spec.add_development_dependency 'capybara'
+  spec.add_development_dependency 'poltergeist'
 end

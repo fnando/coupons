@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= yield :page_title %></title>
+  <%= stylesheet_link_tag 'coupons' %>
+</head>
+<body>
+  <div class="page container">
+    <%= render 'header' %>
+
+    <div class="content">
+      <%= render 'flash_messages' %>
+      <%= yield %>
+    </div>
+  </div>
+  <%= javascript_include_tag 'coupons' %>
+</body>
+</html>

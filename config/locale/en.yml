@@ -1,0 +1,87 @@
+en:
+  date:
+    formats:
+      coupon: '%b %d, %Y'
+
+  coupons:
+    new_coupon_button: 'Create Coupon'
+
+    'off':
+      amount: '$%{amount} OFF'
+      percentage: '%{amount}% OFF'
+
+    redeemed_html:
+      zero: <span class="mute">Not yet</span>
+      one: '%{count}/<span class="limit">%{limit}</span>'
+      other: '%{count}/<span class="limit">%{limit}</span>'
+
+    limit:
+      zero: '∞'
+      one: '%{count}'
+      other: '%{count}'
+
+    columns:
+      description: 'Description'
+      discount: 'Discount'
+      redeemed: 'Redeemed'
+      expiration: 'Expiration'
+
+    actions:
+      edit: 'Edit'
+      remove: 'Remove'
+      confirm: "Yes, I'm sure!"
+      cancel: "Never mind!"
+
+    flash:
+      coupons:
+        create:
+          notice: The coupon has been created!
+        update:
+          notice: The coupon has been updated!
+        destroy:
+          notice: The coupon has been removed!
+        batch:
+          invalid_action: 'This action is not valid.'
+          removal:
+            notice: 'The coupons have been removed!'
+
+    titles:
+      coupons: Coupons
+      coupons_new: New Coupon
+
+    labels:
+      coupon:
+        description: 'Description'
+        redemption_limit: 'Redemption Limit'
+        type: 'Type'
+        amount: 'Amount'
+        code: 'Discount Code'
+
+    hints:
+      coupon:
+        type: 'Select how this coupon will apply the discount.'
+        code: 'Customers will inform this code when checking out.'
+        description: 'Describe this coupon, so you can remember why it exists.'
+        redemption_limit: 'Set how many times this coupon can be used. Zero means no limit.'
+        amount: 'This is the actual discount amount. 0-100 for percentage, zero or positive number for amount.'
+        expires_on: 'When will this coupon expire. By default, it does not expire.'
+
+    form_error_description: 'You must double check the form:'
+
+    coupon:
+      type:
+        amount: 'Amount ($)'
+        percentage: 'Percentage (%)'
+
+      buttons:
+        create: 'Create Coupon'
+        edit: 'Update Coupon'
+        remove_selected: 'Remove Coupons'
+
+      no_description: 'No description provided'
+      dont_expire: Never
+
+  activerecord:
+    errors:
+      messages:
+        coupon_already_expired: must be equal to or greater than today

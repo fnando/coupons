@@ -20,18 +20,20 @@ module Coupons
       serialize :attachments, GlobalidSerializer
 
       validates_numericality_of :amount,
-        greater_than: 0,
+        greater_than_or_equal_to: 0,
         less_than_or_equal_to: 100,
         only_integer: true,
         if: :percentage_based?
 
       validates_numericality_of :amount,
-        greater_than: 0,
+        greater_than_or_equal_to: 0,
         only_integer: true,
         if: :amount_based?
 
       validates_numericality_of :redemption_limit,
         greater_than_or_equal_to: 0
+
+      validate :validate_expires_on
 
       def apply(options)
         input_amount = BigDecimal("#{options[:amount]}")
@@ -59,7 +61,9 @@ module Coupons
         !expired? && redemption_count < redemption_limit
       end
 
-      private
+      def to_partial_path
+        'coupons/coupon'
+      end
 
       def percentage_based?
         type == 'percentage'
@@ -69,8 +73,16 @@ module Coupons
         type == 'amount'
       end
 
+      private
+
       def percentage_discount(input_amount)
         BigDecimal("#{input_amount}") * (BigDecimal("#{amount}") / 100)
+      end
+
+      def validate_expires_on
+        return if expires_on_before_type_cast.blank?
+        errors.add(:expires_on, :invalid) unless expires_on.kind_of?(Date)
+        errors.add(:expires_on, :coupon_already_expired) if expires_on? && expires_on < Date.current
       end
     end
   end

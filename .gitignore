@@ -16,3 +16,4 @@ log
 *.log
 *.sqlite3
 *.lock
+tmp

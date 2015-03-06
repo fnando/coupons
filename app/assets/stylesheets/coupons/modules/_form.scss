@@ -1,0 +1,154 @@
+form:not(.button_to.skip) {
+  width: 70%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.form-group {
+  display: flex;
+}
+
+.form-group .error-message {
+  display: block;
+  color: #bf3604;
+  padding-top: 10px;
+}
+
+.form-errors p {
+  font-size: $font-size-large;
+  font-weight: bold;
+  color: #bf3604;
+}
+
+.form-errors {
+  padding-bottom: 25px;
+  margin-left: 200px;
+}
+
+.form-errors ul {
+  display: none;
+}
+
+.form-group + .form-group {
+  margin-top: 25px;
+}
+
+.form-label {
+  flex: 0 0 200px;
+  padding-right: 25px;
+}
+
+.form-actions {
+  border-top: 1px solid $gray-light;
+  margin-left: 200px;
+  padding-top: 25px;
+}
+
+.form-label label {
+  font-weight: bold;
+}
+
+.form-label .hint {
+  display: block;
+  color: $gray;
+  padding-top: 5px;
+  font-size: $font-size-small;
+}
+
+.form-control {
+  flex: 1 0;
+}
+
+.form-group .field_with_errors {
+  input[type=text],
+  input[type=number],
+  select {
+    border-color: #bf3604;
+
+    &:focus {
+      outline-color: #bf3604;
+    }
+  }
+
+  label {
+    color: #bf3604;
+  }
+
+  input[type=text],
+  input[type=number] {
+    padding-right: 35px;
+    background: image-url('coupons/error.png') no-repeat right center;
+  }
+}
+
+.form-group .field_with_errors + .hint {
+  color: #bf3604;
+}
+
+input[type=checkbox] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+  background: image-url('coupons/checkbox-off.svg') no-repeat;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+}
+
+input[type=checkbox]:checked {
+  background: image-url('coupons/checkbox-on.svg');
+}
+
+input[type=checkbox]:not(:checked):hover,
+input[type=checkbox]:not(:checked):focus {
+  background: image-url('coupons/checkbox-hover.svg');
+}
+
+input[type=checkbox]:focus {
+  outline: 1px dotted #000;
+}
+
+input[type=text],
+input[type=number] {
+  width: 100%;
+  padding: 10px;
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid $gray;
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 10px;
+  font-size: inherit;
+  font-family: inherit;
+  border-radius: 0;
+  background: #fff image-url('coupons/dropdown.png') no-repeat right center;
+  border: 1px solid $gray;
+  width: auto;
+  padding-right: 50px;
+  text-indent: 0.01px;
+  text-overflow: '';
+}
+
+@-moz-document url-prefix() {
+  select {
+    padding-right: 50px;
+    overflow: -moz-hidden-unscrollable;
+  }
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+form.button_to {
+  display: inline-block;
+}
+
+.button_to + a {
+  margin-left: 25px;
+}
