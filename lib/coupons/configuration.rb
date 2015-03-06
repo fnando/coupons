@@ -1,7 +1,7 @@
 module Coupons
   class Configuration
-    # Set the object resolver.
-    attr_accessor :resolver
+    # Set the list of resolvers.
+    attr_accessor :resolvers
 
     # Set the token generator.
     attr_accessor :generator

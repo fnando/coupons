@@ -17,6 +17,8 @@ module Coupons
       validates_presence_of :code
       validates_inclusion_of :type, in: %w[percentage amount]
 
+      serialize :attachments, GlobalidSerializer
+
       validates_numericality_of :amount,
         greater_than: 0,
         less_than_or_equal_to: 100,
@@ -36,7 +38,13 @@ module Coupons
         discount = BigDecimal(percentage_based? ? percentage_discount(options[:amount]) : amount)
         total = [0, input_amount - discount].max
 
-        {total: total, discount: discount, amount: input_amount}
+        options = options.merge(total: total, discount: discount)
+
+        options = Coupons.configuration.resolvers.reduce(options) do |options, resolver|
+          resolver.resolve(self, options)
+        end
+
+        options
       end
 
       def redemption_count

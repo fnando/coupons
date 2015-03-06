@@ -88,4 +88,19 @@ describe Coupons::Models::Coupon do
 
     expect(coupon.reload).not_to be_redeemable
   end
+
+  describe 'serialization' do
+    let!(:category) { Category.create!(name: 'Books') }
+    let!(:product) { category.products.create!(name: 'All about Rails', price: 29) }
+
+    it 'saves attachments' do
+      coupon = create_coupon(
+        amount: 10,
+        type: 'amount',
+        attachments: {category: category}
+      )
+
+      expect(coupon.reload.attachments[:category]).to eq(category)
+    end
+  end
 end

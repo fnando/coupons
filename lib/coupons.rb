@@ -4,6 +4,8 @@ module Coupons
   require 'coupons/configuration'
   require 'coupons/generator'
   require 'coupons/helpers'
+  require 'coupons/globalid_serializer'
+  require 'coupons/resolver'
   require 'coupons/models/coupon'
   require 'coupons/models/coupon_redemption'
 
@@ -23,5 +25,6 @@ module Coupons
 
   configure do |config|
     config.generator = Generator.new
+    config.resolvers = [Resolver.new]
   end
 end
