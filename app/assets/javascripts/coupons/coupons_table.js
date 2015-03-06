@@ -9,6 +9,8 @@
 
   function toggleActions() {
     var howManySelected = checkboxes.filter(':checked').length;
+    var selected = actions.find('.selected');
+    var text;
 
     if (howManySelected > 0) {
       actions.slideDown();
@@ -16,8 +18,14 @@
       actions.slideUp();
     }
 
+    if (howManySelected === 1) {
+      text = selected.data('one');
+    } else {
+      text = selected.data('other');
+    }
+
     actions.removeClass('hidden');
-    actions.find('.selected').text(howManySelected + ' coupons selected');
+    selected.text(text.replace(/\$\{count\}/gm, howManySelected));
   }
 
   main.on('change', function(event){

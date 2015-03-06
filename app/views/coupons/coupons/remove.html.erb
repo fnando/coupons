@@ -1,5 +1,9 @@
 <% content_for(:page_title) { t('coupons.titles.coupons_remove') } %>
 
+<% content_for(:page_action) do %>
+  <%= link_to t('coupons.actions.go_back'), coupons_path, class: 'button rounded gray' %>
+<% end %>
+
 <div class="panel">
   <div class="panel-title">
     Are you sure you want to remove <strong>this coupon</strong>?

@@ -10,7 +10,7 @@
 
 .button:not(.secondary) {
   font-weight: bold;
-  padding: 15px 25px;
+  padding: 10px 25px;
 }
 
 .button.secondary {
@@ -26,6 +26,11 @@
 .button.green {
   background: #33c08b;
   color: #fff;
+}
+
+.button.gray {
+  background: $gray-light;
+  color: rgba(#000, .4);
 }
 
 .button.blue {

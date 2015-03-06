@@ -1,10 +1,14 @@
 <% content_for(:page_title) { t('coupons.titles.coupons') } %>
 
+<% content_for(:page_action) do %>
+  <%= link_to t('coupons.new_coupon_button'), new_coupon_path, class: 'button rounded green' %>
+<% end %>
+
 <% if @coupons.any? %>
   <%= form_tag coupons_path, method: 'patch', class: 'skip' do %>
     <div class="coupons-actions hidden">
       <div class="container">
-        <span class="selected"></span>
+        <span class="selected" data-one="<%= t('coupons.selected_rules.one') %>" data-other="<%= t('coupons.selected_rules.other') %>"></span>
 
         <div class="coupons-actions-buttons">
           <input type="submit" name="remove_action" class="button rounded red secondary" value="<%= t('coupons.coupon.buttons.remove_selected') %>">

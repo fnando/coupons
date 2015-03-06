@@ -6,6 +6,10 @@ en:
   coupons:
     new_coupon_button: 'Create Coupon'
 
+    selected_rules:
+      one: '${count} coupon selected'
+      other: '${count} coupons selected'
+
     'off':
       amount: '$%{amount} OFF'
       percentage: '%{amount}% OFF'
@@ -31,6 +35,7 @@ en:
       remove: 'Remove'
       confirm: "Yes, I'm sure!"
       cancel: "Never mind!"
+      go_back: 'Go Back'
 
     flash:
       coupons:
@@ -49,6 +54,7 @@ en:
       coupons: Coupons
       coupons_new: New Coupon
       coupons_edit: Edit Coupon
+      coupons_remove: Remove Coupon
 
     labels:
       coupon:

@@ -1,87 +1,92 @@
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :code %>
-    <%= form.hint  :code %>
+<%= form_for coupon, as: 'coupon', url: url, builder: Coupons::FormBuilder, html: {class: 'form'} do |form| %>
+  <%= render 'form_errors', record: coupon %>
+
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :code %>
+      <%= form.hint  :code %>
+    </div>
+
+    <div class="form-control">
+      <%= form.text_field :code, autofocus: true %>
+      <%= form.error_for :code %>
+    </div>
   </div>
 
-  <div class="form-control">
-    <%= form.text_field :code, autofocus: true %>
-    <%= form.error_for :code %>
-  </div>
-</div>
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :description %>
+      <%= form.hint  :description, 'foo' %>
+    </div>
 
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :description %>
-    <%= form.hint  :description, 'foo' %>
-  </div>
-
-  <div class="form-control">
-    <%= form.text_field :description %>
-    <%= form.error_for :description %>
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :redemption_limit %>
-    <%= form.hint  :redemption_limit %>
+    <div class="form-control">
+      <%= form.text_field :description %>
+      <%= form.error_for :description %>
+    </div>
   </div>
 
-  <div class="form-control">
-    <%= form.number_field :redemption_limit, min: 0 %>
-    <%= form.error_for :redemption_limit %>
-  </div>
-</div>
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :redemption_limit %>
+      <%= form.hint  :redemption_limit %>
+    </div>
 
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :type %>
-    <%= form.hint  :type %>
-  </div>
-
-  <div class="form-control">
-    <%= form.select :type, Coupons::CouponType.to_select, include_blank: true %>
-    <%= form.error_for :type %>
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :amount %>
-    <%= form.hint  :amount %>
+    <div class="form-control">
+      <%= form.number_field :redemption_limit, min: 0 %>
+      <%= form.error_for :redemption_limit %>
+    </div>
   </div>
 
-  <div class="form-control">
-    <%= form.text_field :amount %>
-    <%= form.error_for :amount %>
-  </div>
-</div>
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :type %>
+      <%= form.hint  :type %>
+    </div>
 
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :valid_from %>
-    <%= form.hint  :valid_from %>
-  </div>
-
-  <div class="form-control">
-    <%= form.date_select :valid_from, include_blank: true, start_year: Date.current.year, end_year: Date.current.year + 10 %>
-    <%= form.error_for :valid_from %>
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="form-label">
-    <%= form.label :valid_until %>
-    <%= form.hint  :valid_until %>
+    <div class="form-control">
+      <%= form.select :type, Coupons::CouponType.to_select, include_blank: true %>
+      <%= form.error_for :type %>
+    </div>
   </div>
 
-  <div class="form-control">
-    <%= form.date_select :valid_until, include_blank: true, start_year: Date.current.year, end_year: Date.current.year + 10 %>
-    <%= form.error_for :valid_until %>
-  </div>
-</div>
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :amount %>
+      <%= form.hint  :amount %>
+    </div>
 
-<div class="form-actions form-group">
-  <%= form.submit t(form.object.persisted? ? 'edit' : 'create', scope: 'coupons.coupon.buttons'), class: 'button rounded green' %>
-</div>
+    <div class="form-control">
+      <%= form.text_field :amount %>
+      <%= form.error_for :amount %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :valid_from %>
+      <%= form.hint  :valid_from %>
+    </div>
+
+    <div class="form-control">
+      <%= form.date_select :valid_from, include_blank: true, start_year: Date.current.year, end_year: Date.current.year + 10 %>
+      <%= form.error_for :valid_from %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-label">
+      <%= form.label :valid_until %>
+      <%= form.hint  :valid_until %>
+    </div>
+
+    <div class="form-control">
+      <%= form.date_select :valid_until, include_blank: true, start_year: Date.current.year, end_year: Date.current.year + 10 %>
+      <%= form.error_for :valid_until %>
+    </div>
+  </div>
+
+  <div class="form-actions form-group">
+    <%= form.submit t(form.object.persisted? ? 'edit' : 'create', scope: 'coupons.coupon.buttons'), class: 'button rounded green' %>
+  </div>
+
+<% end %>

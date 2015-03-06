@@ -2,6 +2,6 @@
   <h1><%= yield :page_title %></h1>
 
   <div class="main-header-actions">
-    <%= link_to t('coupons.new_coupon_button'), new_coupon_path, class: 'button rounded green' %>
+    <%= yield :page_action %>
   </div>
 </header>

@@ -1,6 +1,7 @@
 <% content_for(:page_title) { t('coupons.titles.coupons_edit') } %>
 
-<%= form_for @coupon, as: 'coupon', url: coupon_path(@coupon), builder: Coupons::FormBuilder, html: {class: 'form'} do |form| %>
-  <%= render 'form_errors', record: @coupon %>
-  <%= render 'form', form: form %>
+<% content_for(:page_action) do %>
+  <%= link_to t('coupons.actions.go_back'), coupons_path, class: 'button rounded gray' %>
 <% end %>
+
+<%= render 'form', coupon: @coupon, url: coupon_path(@coupon) %>
