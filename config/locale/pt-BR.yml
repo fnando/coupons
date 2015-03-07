@@ -4,6 +4,11 @@ pt-BR:
       coupon: '%d/%m/%Y'
 
   coupons:
+    paginate:
+      previous: 'Página anterior'
+      next: 'Próxima página'
+      page: 'Página %{page}'
+
     new_coupon_button: 'Criar Cupom'
     are_you_sure_you_want_to_remove_html: >
       Tem certeza que quer remover este cupom de desconto?

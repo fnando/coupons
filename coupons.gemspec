@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '>= 4.2.0', '< 5.0.0'
   spec.add_dependency 'autoprefixer-rails'
   spec.add_dependency 'sass-rails', '~> 5.0'
+  spec.add_dependency 'paginate', '~> 4.0'
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'rake'

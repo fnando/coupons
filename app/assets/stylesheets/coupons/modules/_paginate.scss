@@ -1,0 +1,41 @@
+.paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-top: 25px;
+}
+
+.paginate.disabled {
+  display: none;
+}
+
+.paginate li {
+  flex: 1 0;
+}
+
+.paginate li.disabled > span {
+  @extend .button.gray;
+  cursor: default;
+}
+
+.paginate li.disabled > span,
+.paginate a {
+  @extend .button;
+  @extend .button.rounded;
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 25px;
+}
+
+.paginate a {
+  @extend .button.blue;
+}
+
+.paginate .page {
+  text-align: center;
+}
+
+.paginate .next-page {
+  text-align: right;
+}

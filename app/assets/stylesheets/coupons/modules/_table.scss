@@ -14,8 +14,8 @@ th {
   padding: 10px;
 }
 
-tbody tr + tr td {
-  border-top: 1px solid $gray-light;
+tbody td {
+  border-bottom: 1px solid $gray-light;
 }
 
 tbody tr:hover td {

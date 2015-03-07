@@ -4,6 +4,11 @@ en:
       coupon: '%b %d, %Y'
 
   coupons:
+    paginate:
+      previous: 'Previous page'
+      next: 'Next page'
+      page: 'Page %{page}'
+
     new_coupon_button: 'Create Coupon'
     are_you_sure_you_want_to_remove_html: >
       Are you sure you want to remove this coupon?
