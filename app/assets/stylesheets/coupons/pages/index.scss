@@ -51,3 +51,9 @@ table tr:hover .icon-button {
 .coupons-actions-buttons .button + .button {
   margin-left: 15px;
 }
+
+.infinite {
+  font-size: $font-size-large;
+  position: relative;
+  top: 2px;
+}

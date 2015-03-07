@@ -5,22 +5,27 @@ en:
 
   coupons:
     new_coupon_button: 'Create Coupon'
+    are_you_sure_you_want_to_remove_html: >
+      Are you sure you want to remove this coupon?
+    you_cant_undo_removal_html: >
+      All redemption trackings will be removed as well.
+      <strong>You won't be able to undo this action.</strong>
 
     selected_rules:
       one: '${count} coupon selected'
       other: '${count} coupons selected'
 
     'off':
-      amount: '$%{amount} OFF'
-      percentage: '%{amount}% OFF'
+      amount_html: '<span class="amount">$%{amount} OFF</span>'
+      percentage_html: '<span class="percentage%>%{amount}% OFF</span>'
 
     redeemed_html:
       zero: <span class="mute">Not yet</span>
       one: '%{count}/<span class="limit">%{limit}</span>'
       other: '%{count}/<span class="limit">%{limit}</span>'
 
-    limit:
-      zero: '∞'
+    limit_html:
+      zero: '<span class="infinite">∞</span>'
       one: '%{count}'
       other: '%{count}'
 

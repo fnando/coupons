@@ -183,6 +183,10 @@ response.done(function(options)) {
 
 If you provide invalid amount/coupon, then it'll return zero values, like `{amount: 0, discount: 0, total: 0}`.
 
+### I18n support
+
+Coupons uses [I18n](http://guides.rubyonrails.org/i18n.html). It has support for `en` and `pt-BR`. You can contribute with your language by translating the file [config/en.yml](https://github.com/fnando/coupons/blob/master/config/locale/en.yml).
+
 ## Screenshots
 
 ![Viewing existing coupons](https://github.com/fnando/coupons/raw/master/screenshots/coupons-index.png)

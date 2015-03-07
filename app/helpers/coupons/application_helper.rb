@@ -1,6 +1,6 @@
 module Coupons::ApplicationHelper
   def coupon_discount(coupon)
-    t(coupon.type, scope: 'coupons.off', amount: coupon.amount)
+    t("#{coupon.type}_html", scope: 'coupons.off', amount: coupon.amount)
   end
 
   def coupon_description(coupon)
@@ -17,7 +17,7 @@ module Coupons::ApplicationHelper
   end
 
   def redeemed(coupon)
-    limit = t('coupons.limit', count: coupon.redemption_limit)
+    limit = t('coupons.limit_html', count: coupon.redemption_limit)
     t('coupons.redeemed_html', count: coupon.redemptions_count, limit: limit)
   end
 

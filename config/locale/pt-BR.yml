@@ -1,0 +1,103 @@
+pt-BR:
+  date:
+    formats:
+      coupon: '%d/%m/%Y'
+
+  coupons:
+    new_coupon_button: 'Criar Cupom'
+    are_you_sure_you_want_to_remove_html: >
+      Tem certeza que quer remover este cupom de desconto?
+    you_cant_undo_removal_html: >
+      Todos os rastreamentos de uso de cupons também serão removidos.
+      <strong>Não será possível desfazer esta ação.</strong>
+
+    selected_rules:
+      one: '${count} cupom selecionado'
+      other: '${count} cupons selecionados'
+
+    'off':
+      amount_html: '<span class="amount">R$%{amount}</span>'
+      percentage_html: '<span class="percentage">%{amount}%</span>'
+
+    redeemed_html:
+      zero: <span class="mute">Ainda não</span>
+      one: '%{count}/<span class="limit">%{limit}</span>'
+      other: '%{count}/<span class="limit">%{limit}</span>'
+
+    limit_html:
+      zero: '<span class="infinite">∞</span>'
+      one: '%{count}'
+      other: '%{count}'
+
+    columns:
+      description: 'Descrição'
+      discount: 'Desconto'
+      redeemed: 'Utilizado'
+      expiration: 'Término'
+
+    actions:
+      edit: 'Editar'
+      remove: 'Remover'
+      confirm: "Sim, tenho certeza!"
+      cancel: "Mudei de ideia!"
+      go_back: 'Voltar'
+
+    flash:
+      coupons:
+        create:
+          notice: O cupom foi criado!
+        update:
+          notice: O cupom foi atualizado!
+        destroy:
+          notice: O cupom foi removido!
+        batch:
+          invalid_action: 'Esta ação é inválida.'
+          removal:
+            notice: 'Os cupons foram removidos.'
+
+    titles:
+      coupons: Cupons
+      coupons_new: Novo Cupom
+      coupons_edit: Editar Cupom
+      coupons_remove: Remover Cupom
+
+    labels:
+      coupon:
+        description: 'Descrição'
+        redemption_limit: 'Limite de Uso'
+        type: 'Tipo'
+        amount: 'Quantia'
+        code: 'Código de Desconto'
+        valid_from: 'Válido à partir de'
+        valid_until: 'Válido Até'
+
+    hints:
+      coupon:
+        type: 'Escolha como o desconto será aplicado.'
+        code: 'Este é o código que deverá ser informado na página de checkout.'
+        description: 'Descreva este cupom, assim saberá por que ele existe.'
+        redemption_limit: 'Defina quantas vezes o cupom pode ser usado. Zero significa sem limites.'
+        amount: 'O desconto que será aplicado. De 0-100 para porcentagem, zero ou um número positivo para um valor.'
+        valid_from: 'Data de início do cupom.'
+        valid_until: 'Data de término do cupom. Por padrão, não expira nunca.'
+
+    form_error_description: 'Verifique o formulário antes de continuar:'
+
+    coupon:
+      type:
+        amount: 'Valor ($)'
+        percentage: 'Porcentagem (%)'
+
+      buttons:
+        create: 'Criar Cupom'
+        edit: 'Atualizar Cupom'
+        remove_selected: 'Remover Cupom'
+
+      no_description: 'Sem descrição'
+      dont_expire: Nunca
+
+  activerecord:
+    errors:
+      messages:
+        coupon_already_expired: deve ser igual ou maior que hoje.
+        coupon_valid_until: deve ser igual ou maior que a data de início.
