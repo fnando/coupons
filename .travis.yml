@@ -3,9 +3,18 @@ cache: bundler
 sudo: false
 
 rvm:
-  - 2.0
-  - 2.1
-  - 2.2
+  - '2.0'
+  - '2.1'
+  - '2.2'
+
+addons:
+  postgresql: '9.3'
+
+before_script:
+  - psql -c 'create database coupons_test;' -U postgres
+
+env:
+  - DATABASE_URL=postgres://postgres@localhost/coupons_test
 
 gemfile:
   - Gemfile

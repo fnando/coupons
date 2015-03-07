@@ -1,3 +1,2 @@
 test:
-  adapter: sqlite3
-  database: '../db/test.sqlite3'
+  url: <%= ENV.fetch('DATABASE_URL', "sqlite3://#{File.expand_path('../spec/db/test.sqlite3', __FILE__)}") %>
