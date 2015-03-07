@@ -25,7 +25,7 @@ module Coupons
     #     redeem('ABC123', amount: 100)
     #     #=> {amount: 100, discount: 30, total: 70}
     #
-    def redeem(code, options = {})
+    def redeem(code, options)
       options[:discount] = 0
       options[:total] = options[:amount]
 
@@ -44,7 +44,7 @@ module Coupons
     #     apply('ABC123', amount: 100)
     #     #=> {amount: 100, discount: 30, total: 70}
     #
-    def apply(code, options = {})
+    def apply(code, options)
       options[:discount] = 0
       options[:total] = options[:amount]
 
@@ -55,7 +55,7 @@ module Coupons
     end
 
     # Create a new coupon code.
-    def create(options = {})
+    def create(options)
       ::Coupons::Models::Coupon.create!(options)
     end
 
