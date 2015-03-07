@@ -77,7 +77,7 @@
   input[type=text],
   input[type=number] {
     padding-right: 35px;
-    background: image-url('coupons/error.png') no-repeat right center;
+    background: image-url('coupons/error.svg') no-repeat right 10px center;
   }
 }
 
@@ -126,12 +126,13 @@ select {
   font-size: inherit;
   font-family: inherit;
   border-radius: 0;
-  background: #fff image-url('coupons/dropdown.png') no-repeat right center;
+  background: #fff image-url('coupons/dropdown.svg') no-repeat right 10px center;
   border: 1px solid $gray;
   width: auto;
   padding-right: 50px;
   text-indent: 0.01px;
   text-overflow: '';
+  cursor: pointer;
 }
 
 @-moz-document url-prefix() {
