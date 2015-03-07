@@ -27,4 +27,7 @@ module Coupons
 
   # Initialize the default configuration object.
   self.configuration = Configuration.new
+
+  # Inject helpers.
+  extend Helpers
 end

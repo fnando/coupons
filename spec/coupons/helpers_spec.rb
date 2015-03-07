@@ -3,6 +3,16 @@ require 'spec_helper'
 describe Coupons::Helpers do
   let(:maker) { Object.new.extend(Coupons::Helpers) }
 
+  it 'extends Coupons' do
+    method_list = Coupons.singleton_methods
+
+    expect(method_list).to include(:apply)
+    expect(method_list).to include(:redeem)
+    expect(method_list).to include(:create)
+    expect(method_list).to include(:find_by_code)
+    expect(method_list).to include(:find_by_valid_code)
+  end
+
   it 'creates coupon' do
     coupon = maker.create(amount: 10, type: 'amount')
     expect(coupon).to be_persisted

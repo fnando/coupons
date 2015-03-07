@@ -50,7 +50,7 @@ module Coupons
         options
       end
 
-      def redemption_count
+      def redemptions_count
         coupon_redemptions_count
       end
 
@@ -58,8 +58,16 @@ module Coupons
         valid_until && valid_until <= Date.current
       end
 
+      def has_available_redemptions?
+        redemptions_count.zero? || redemptions_count < redemption_limit
+      end
+
+      def started?
+        valid_from <= Date.current
+      end
+
       def redeemable?
-        !expired? && redemption_count < redemption_limit && valid_from <= Date.current
+        !expired? && has_available_redemptions? && started?
       end
 
       def to_partial_path

@@ -5,6 +5,6 @@ describe Coupons::Models::CouponRedemption do
     coupon = create_coupon(amount: 100, type: 'amount')
     coupon.redemptions.create!
 
-    expect(coupon.reload.redemption_count).to eq(1)
+    expect(coupon.reload.redemptions_count).to eq(1)
   end
 end

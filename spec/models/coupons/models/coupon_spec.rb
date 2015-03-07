@@ -122,6 +122,11 @@ describe Coupons::Models::Coupon do
     expect(coupon.reload).to be_redeemable
   end
 
+  it 'is redeemable when have no limit' do
+    coupon = create_coupon(amount: 100, type: 'amount', redemption_limit: 0)
+    expect(coupon.reload).to be_redeemable
+  end
+
   it 'is redeemable when have available redemptions' do
     coupon = create_coupon(amount: 100, type: 'amount')
     expect(coupon.reload).to be_redeemable
