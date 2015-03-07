@@ -5,50 +5,7 @@
 <% end %>
 
 <% if @coupons.any? %>
-  <%= form_tag coupons_path, method: 'patch', class: 'skip' do %>
-    <div class="coupons-actions hidden">
-      <div class="container">
-        <span class="selected" data-one="<%= t('coupons.selected_rules.one') %>" data-other="<%= t('coupons.selected_rules.other') %>"></span>
-
-        <div class="coupons-actions-buttons">
-          <input type="submit" name="remove_action" class="button rounded red secondary" value="<%= t('coupons.coupon.buttons.remove_selected') %>">
-        </div>
-      </div>
-    </div>
-
-    <table class="coupons-table">
-      <thead>
-        <tr>
-          <th class="checkbox">
-            <input type="checkbox" class="main" name="coupon-selector">
-          </th>
-
-          <th>
-            <%= t('coupons.columns.discount') %>
-          </th>
-
-          <th>
-            <%= t('coupons.columns.description') %>
-          </th>
-
-          <th class="text-center">
-            <%= t('coupons.columns.redeemed') %>
-          </th>
-
-          <th class="text-center">
-            <%= t('coupons.columns.expiration') %>
-          </th>
-
-          <th class="actions">
-          </th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <%= render @coupons %>
-      </tbody>
-    </table>
-  <% end %>
+  <%= render 'coupons', coupons: @coupons %>
 <% else %>
   <%= render 'no_coupons' %>
 <% end %>
