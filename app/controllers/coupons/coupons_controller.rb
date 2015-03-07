@@ -1,4 +1,15 @@
 class Coupons::CouponsController < Coupons::ApplicationController
+  def apply
+    coupon_code = params[:coupon]
+    amount = BigDecimal(params.fetch(:amount, '0.0'))
+    options = Coupons
+              .apply(params[:coupon], amount: amount)
+              .slice(:amount, :discount, :total)
+              .reduce({}) {|buffer, (key, value)| buffer.merge(key => Float(value)) }
+
+    render json: options
+  end
+
   def index
     @coupons = Coupon.all
   end

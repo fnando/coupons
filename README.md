@@ -169,6 +169,20 @@ To be written.
 
 To be written.
 
+### JSON endpoint
+
+You may want to apply discounts using AJAX, so you can give instant feedback. In this case, you'll find the `/coupons/apply` endpoint useful.
+
+```javascript
+var response = $.get('/coupons/apply', {amount: 600.0, coupon: 'RAILSCONF15'});
+response.done(function(options)) {
+  console.log(options);
+  //=> {amount: 600.0, discount: 100.0, total: 500.0}
+});
+```
+
+If you provide invalid amount/coupon, then it'll return zero values, like `{amount: 0, discount: 0, total: 0}`.
+
 ## Screenshots
 
 ![Viewing existing coupons](https://github.com/fnando/coupons/raw/master/screenshots/coupons-index.png)
