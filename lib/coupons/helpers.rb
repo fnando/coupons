@@ -29,7 +29,7 @@ module Coupons
       options[:discount] = 0
       options[:total] = options[:amount]
 
-      coupon = find_by_valid_code(code)
+      coupon = find(code, options)
       return options unless coupon
 
       coupon.redemptions.create!(options.slice(:user_id, :order_id))
@@ -48,7 +48,7 @@ module Coupons
       options[:discount] = 0
       options[:total] = options[:amount]
 
-      coupon = find_by_valid_code(code)
+      coupon = find(code, options)
       return options unless coupon
 
       coupon.apply(options)
@@ -59,16 +59,10 @@ module Coupons
       ::Coupons::Models::Coupon.create!(options)
     end
 
-    # Find a coupon by its code.
-    def find_by_code(code)
-      ::Coupons::Models::Coupon.find_by_code(code)
-    end
-
     # Find a valid coupon by its code.
     # It takes starting/ending date, and redemption count in consideration.
-    def find_by_valid_code(code)
-      coupon = find_by_code(code)
-      coupon.try(:redeemable?) && coupon
+    def find(code, options)
+      Coupons.configuration.finder.call(code, options)
     end
   end
 end

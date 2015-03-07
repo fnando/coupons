@@ -9,8 +9,7 @@ describe Coupons::Helpers do
     expect(method_list).to include(:apply)
     expect(method_list).to include(:redeem)
     expect(method_list).to include(:create)
-    expect(method_list).to include(:find_by_code)
-    expect(method_list).to include(:find_by_valid_code)
+    expect(method_list).to include(:find)
   end
 
   it 'creates coupon' do

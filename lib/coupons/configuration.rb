@@ -9,9 +9,13 @@ module Coupons
     # Set the authorizer.
     attr_accessor :authorizer
 
+    # Set the coupon finder strategy.
+    attr_accessor :finder
+
     def initialize
       @resolvers = [Resolver.new]
       @generator = Generator.new
+      @finder = Finders::FirstAvailable
       @authorizer = proc do |controller|
         if Rails.env.production?
           controller.render(
