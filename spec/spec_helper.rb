@@ -2,6 +2,7 @@ require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 
 ENV['RAILS_ENV'] ||= 'test'
+require 'bundler/setup'
 require_relative 'dummy/config/application'
 require 'rspec/rails'
 require 'coupons'
