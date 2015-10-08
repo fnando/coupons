@@ -101,6 +101,11 @@ en:
       no_description: 'No description provided'
       dont_expire: Never
 
+    blank_slate:
+      index:
+        no_coupons: 'No Coupons'
+        info: "You haven't created coupons yet. This where they appear."
+
   activerecord:
     errors:
       messages:
