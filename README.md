@@ -78,7 +78,7 @@ To redeem the coupon you can use `Coupon.redeem`.
 Coupons.redeem('RAILSCONF15', amount: 600.00)
 #=> {:amount => 600.0, :discount => 100.0, :total => 500.0}
 
-coupon = Copouns::Models::Coupon.last
+coupon = Coupons::Models::Coupon.last
 
 coupon.redemptions_count
 #=> 1
@@ -141,7 +141,7 @@ Coupons.configure do |config|
   config.authorizer = proc do |controller|
     if Rails.env.production?
       controller.render(
-        text: 'Coupouns: not enabled in production environments',
+        text: 'Coupons: not enabled in production environments',
         status: 403
       )
     end
