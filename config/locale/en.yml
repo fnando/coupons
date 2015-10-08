@@ -22,7 +22,7 @@ en:
 
     'off':
       amount_html: '<span class="amount">$%{amount} OFF</span>'
-      percentage_html: '<span class="percentage%>%{amount}% OFF</span>'
+      percentage_html: '<span class="percentage">%{amount}% OFF</span>'
 
     redeemed_html:
       zero: <span class="mute">Not yet</span>
