@@ -38,9 +38,9 @@
     </thead>
 
     <tbody>
-      <%= render coupons, paginate: true %>
+      <%= render "coupons/list/#{Coupons.configuration.pagination_adapter}", coupons: coupons %>
     </tbody>
   </table>
 
-  <%= paginate coupons, renderer: Coupons::PaginateRenderer, size: 50 %>
+  <%= render "coupons/pagination/#{Coupons.configuration.pagination_adapter}", coupons: coupons %>
 <% end %>

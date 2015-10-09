@@ -1,8 +1,6 @@
 module Coupons
   module Models
     class Coupon < ActiveRecord::Base
-      include Paginate::Extension
-
       # Allow using `type` as a column.
       self.inheritance_column = nil
 

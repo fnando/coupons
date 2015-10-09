@@ -3,12 +3,20 @@ pt-BR:
     formats:
       coupon: '%d/%m/%Y'
 
-  coupons:
-    paginate:
-      previous: 'Página anterior'
-      next: 'Próxima página'
-      page: 'Página %{page}'
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "&hellip;"
 
+  paginate:
+    previous: 'Página anterior'
+    next: 'Próxima página'
+    page: 'Página %{page}'
+
+  coupons:
     new_coupon_button: 'Criar Cupom'
     are_you_sure_you_want_to_remove_html: >
       Tem certeza que quer remover este cupom de desconto?

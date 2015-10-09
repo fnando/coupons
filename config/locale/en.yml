@@ -3,12 +3,20 @@ en:
     formats:
       coupon: '%b %d, %Y'
 
-  coupons:
-    paginate:
-      previous: 'Previous page'
-      next: 'Next page'
-      page: 'Page %{page}'
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
 
+  paginate:
+    previous: 'Previous page'
+    next: 'Next page'
+    page: 'Page %{page}'
+
+  coupons:
     new_coupon_button: 'Create Coupon'
     are_you_sure_you_want_to_remove_html: >
       Are you sure you want to remove this coupon?
