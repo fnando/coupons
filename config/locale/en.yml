@@ -24,6 +24,10 @@ en:
       All redemption trackings will be removed as well.
       <strong>You won't be able to undo this action.</strong>
 
+    blank_slate:
+      no_coupons: No Coupons
+      no_coupons_description: You haven't created coupons yet. This is where they'll appear.
+
     selected_rules:
       one: '${count} coupon selected'
       other: '${count} coupons selected'
