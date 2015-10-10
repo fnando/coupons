@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mysqladmin -u root drop coupons_test --force &> /dev/null
+mysqladmin -u root create coupons_test --default-character-set=utf8
+dropdb coupons_test &> /dev/null; createdb coupons_test

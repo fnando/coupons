@@ -7,13 +7,15 @@ rvm:
   - '2.2'
 
 addons:
-  postgresql: '9.3'
+  postgresql: '9.4'
 
 before_script:
   - psql -c 'create database coupons_test;' -U postgres
+  - mysql -e 'create database coupons_test;' -u root
 
 env:
-  - DATABASE_URL=postgres://postgres@localhost/coupons_test
+  - 'DATABASE_URL=postgres://postgres@localhost/coupons_test'
+  - 'DATABASE_URL=mysql2://root@localhost/coupons_test'
 
 gemfile:
   - Gemfile
