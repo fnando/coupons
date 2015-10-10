@@ -5,7 +5,9 @@ module Coupons
       attachments = JSON.load(attachments)
 
       attachments.each_with_object({}) do |(key, uri), buffer|
-        buffer[key.to_sym] = GlobalID::Locator.locate(uri)
+        buffer[key.to_sym] = GlobalID::Locator
+                              .locate_many([uri], ignore_missing: true)
+                              .first
       end
     end
 

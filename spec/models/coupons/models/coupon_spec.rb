@@ -165,5 +165,18 @@ describe Coupons::Models::Coupon do
 
       expect(coupon.reload.attachments[:category]).to eq(category)
     end
+
+    it 'returns missing attachments as nil' do
+      coupon = create_coupon(
+        amount: 10,
+        type: 'amount',
+        attachments: {category: category}
+      )
+
+      category.destroy
+      coupon.reload
+
+      expect(coupon.attachments[:category]).to be_nil
+    end
   end
 end
