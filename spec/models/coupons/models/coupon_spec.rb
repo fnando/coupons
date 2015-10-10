@@ -152,6 +152,18 @@ describe Coupons::Models::Coupon do
     expect(coupon.reload).not_to be_redeemable
   end
 
+  it 'sets default attachments object for new records' do
+    coupon = Coupons::Models::Coupon.new
+    expect(coupon.attachments).to eq({})
+  end
+
+  it 'saves default attachments object' do
+    coupon = create_coupon(amount: 10, type: 'amount')
+    coupon.reload
+
+    expect(coupon.attachments).to eq({})
+  end
+
   describe 'serialization' do
     let!(:category) { Category.create!(name: 'Books') }
     let!(:product) { category.products.create!(name: 'All about Rails', price: 29) }

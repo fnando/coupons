@@ -13,7 +13,7 @@ class SetupCoupons < ActiveRecord::Migration
 
       case ActiveRecord::Base.connection.adapter_name
       when 'Mysql2'
-        t.text :attachments, null: false
+        t.text :attachments
       else
         t.text :attachments, null: false, default: '{}'
       end
