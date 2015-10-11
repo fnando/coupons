@@ -13,14 +13,22 @@ da:
           new: Ny rabatkode
           edit: Redigér rabatkode
           remove: Slet rabatkode
-          duplicate: Duplikat rabatkode
+          duplicate: Duplikér rabatkode
+
+  views:
+    pagination:
+      first: "&laquo; Første"
+      last: "Sidste &raquo;"
+      previous: "&lsaquo; Forrige"
+      next: "Næste &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Forrige side'
+    next: 'Næste side'
+    page: 'Side %{page}'
 
   coupons:
-    paginate:
-      previous: 'Forrige side'
-      next: 'Næste side'
-      page: 'Side %{page}'
-
     new_coupon_button: 'Opret rabatkode'
     are_you_sure_you_want_to_remove_html: >
       Er du sikker på at du vil slette denne rabatkode?
@@ -62,6 +70,7 @@ da:
       confirm: "Ja, jeg er sikker!"
       cancel: "Annullér"
       go_back: 'Gå tilbage'
+      duplicate: 'Kopiér'
 
     flash:
       coupons:
