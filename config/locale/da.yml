@@ -4,6 +4,17 @@ da:
     formats:
       coupon: '%b %d, %Y'
 
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Rabatkoder
+          new: Ny rabatkode
+          edit: Redigér rabatkode
+          remove: Slet rabatkode
+          duplicate: Duplikat rabatkode
+
   coupons:
     paginate:
       previous: 'Forrige side'
@@ -60,12 +71,6 @@ da:
           invalid_action: 'Denne handling er ikke gyldig.'
           removal:
             notice: 'Rabatkoderne er slettet'
-
-    titles:
-      coupons: Rabatkoder
-      coupons_new: Ny rabatkode
-      coupons_edit: Redigér rabatkode
-      coupons_remove: Slet rabatkode
 
     labels:
       coupon:

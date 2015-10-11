@@ -34,6 +34,13 @@ class Coupons::CouponsController < Coupons::ApplicationController
     @coupon = Coupon.find(params[:id])
   end
 
+  def duplicate
+    existing_coupon = Coupon.find(params[:id])
+    attributes = existing_coupon.attributes.symbolize_keys.slice(:description, :valid_from, :valid_until, :redemption_limit, :amount, :type)
+    @coupon = Coupon.new(attributes)
+    render :new
+  end
+
   def update
     @coupon = Coupon.find(params[:id])
 

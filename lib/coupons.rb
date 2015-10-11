@@ -24,6 +24,8 @@ module Coupons
   require 'autoprefixer-rails'
   require 'sass-rails'
 
+  require 'page_meta'
+
   class << self
     # Set the Coupons configuration.
     attr_accessor :configuration
