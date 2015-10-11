@@ -22,7 +22,19 @@
   </td>
 
   <td class="text-center">
-    <%= link_to t('coupons.actions.edit'), edit_coupon_path(coupon), class: 'icon-button edit', title: t('coupons.actions.edit') %>
-    <%= link_to t('coupons.actions.remove'), remove_coupon_path(coupon), class: 'icon-button remove', title: t('coupons.actions.remove') %>
+    <%= link_to t('coupons.actions.edit'),
+        edit_coupon_path(coupon),
+        class: 'icon-button edit',
+        title: t('coupons.actions.edit') %>
+
+    <%= link_to t('coupons.actions.remove'),
+        remove_coupon_path(coupon),
+        class: 'icon-button remove',
+        title: t('coupons.actions.remove') %>
+
+    <%= link_to t('coupons.actions.duplicate'),
+        duplicate_coupon_path(coupon),
+        class: 'icon-button duplicate',
+        title: t('coupons.actions.duplicate') %>
   </td>
 </tr>

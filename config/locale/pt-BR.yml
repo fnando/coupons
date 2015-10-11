@@ -3,6 +3,17 @@ pt-BR:
     formats:
       coupon: '%d/%m/%Y'
 
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Cupons
+          new: Novo Cupom
+          edit: Editar Cupom
+          remove: Remover Cupom
+          duplicate: Duplicar Cupom
+
   views:
     pagination:
       first: "&laquo; Primeira"
@@ -55,9 +66,10 @@ pt-BR:
     actions:
       edit: 'Editar'
       remove: 'Remover'
-      confirm: "Sim, tenho certeza!"
-      cancel: "Mudei de ideia!"
+      confirm: 'Sim, tenho certeza!'
+      cancel: 'Mudei de ideia!'
       go_back: 'Voltar'
+      duplicate: 'Duplicar'
 
     flash:
       coupons:
@@ -71,12 +83,6 @@ pt-BR:
           invalid_action: 'Esta ação é inválida.'
           removal:
             notice: 'Os cupons foram removidos.'
-
-    titles:
-      coupons: Cupons
-      coupons_new: Novo Cupom
-      coupons_edit: Editar Cupom
-      coupons_remove: Remover Cupom
 
     labels:
       coupon:

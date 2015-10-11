@@ -4,6 +4,9 @@ class Coupons::ApplicationController < ActionController::Base
   include Coupons::Models
   helper Coupons::ApplicationHelper
 
+  include PageMeta::Helpers
+  helper_method :page_meta
+
   before_action :authorize
 
   private

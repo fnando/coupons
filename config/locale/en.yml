@@ -3,6 +3,17 @@ en:
     formats:
       coupon: '%b %d, %Y'
 
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Coupons
+          new: New Coupon
+          edit: Edit Coupon
+          remove: Remove Coupon
+          duplicate: Duplicate Coupon
+
   views:
     pagination:
       first: "&laquo; First"
@@ -56,8 +67,9 @@ en:
       edit: 'Edit'
       remove: 'Remove'
       confirm: "Yes, I'm sure!"
-      cancel: "Never mind!"
+      cancel: 'Never mind!'
       go_back: 'Go Back'
+      duplicate: 'Duplicate'
 
     flash:
       coupons:
@@ -71,12 +83,6 @@ en:
           invalid_action: 'This action is not valid.'
           removal:
             notice: 'The coupons have been removed!'
-
-    titles:
-      coupons: Coupons
-      coupons_new: New Coupon
-      coupons_edit: Edit Coupon
-      coupons_remove: Remove Coupon
 
     labels:
       coupon:

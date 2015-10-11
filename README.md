@@ -16,7 +16,7 @@ Add this line to your application's Gemfile:
 gem 'coupons'
 ```
 
-You also need one pagination library. You can choose between [paginate](https://github.com/fnando/paginate) or [kaminari](https://github.com/amatsuda/kaminari), so make sure one this libs is added to your Gemfile as well.
+You also need one pagination library. You can choose between [paginate](https://github.com/fnando/paginate) or [kaminari](https://github.com/amatsuda/kaminari), so make sure one of these libs is added to your Gemfile as well.
 
 ```ruby
 gem 'paginate'
