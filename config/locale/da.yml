@@ -28,6 +28,10 @@ da:
       Alle gemte indløsninger vil også blive slettet.
       <strong>Du kan ikke fortryde dette.</strong>
 
+    blank_slate:
+      no_coupons: 'Ingen rabatkoder fundet'
+      no_coupons_description: "Du har ikke oprettet nogen rabatkoder endnu. De bliver vist her når du har oprettet nogen."
+
     selected_rules:
       one: '${count} rabatkode valgt'
       other: '${count} rabatkoder valgt'
