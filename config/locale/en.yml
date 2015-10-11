@@ -3,12 +3,31 @@ en:
     formats:
       coupon: '%b %d, %Y'
 
-  coupons:
-    paginate:
-      previous: 'Previous page'
-      next: 'Next page'
-      page: 'Page %{page}'
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Coupons
+          new: New Coupon
+          edit: Edit Coupon
+          remove: Remove Coupon
+          duplicate: Duplicate Coupon
 
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Previous page'
+    next: 'Next page'
+    page: 'Page %{page}'
+
+  coupons:
     new_coupon_button: 'Create Coupon'
     are_you_sure_you_want_to_remove_html: >
       Are you sure you want to remove this coupon?
@@ -16,13 +35,17 @@ en:
       All redemption trackings will be removed as well.
       <strong>You won't be able to undo this action.</strong>
 
+    blank_slate:
+      no_coupons: No Coupons
+      no_coupons_description: You haven't created coupons yet. This is where they'll appear.
+
     selected_rules:
       one: '${count} coupon selected'
       other: '${count} coupons selected'
 
     'off':
       amount_html: '<span class="amount">$%{amount} OFF</span>'
-      percentage_html: '<span class="percentage%>%{amount}% OFF</span>'
+      percentage_html: '<span class="percentage">%{amount}% OFF</span>'
 
     redeemed_html:
       zero: <span class="mute">Not yet</span>
@@ -44,8 +67,9 @@ en:
       edit: 'Edit'
       remove: 'Remove'
       confirm: "Yes, I'm sure!"
-      cancel: "Never mind!"
+      cancel: 'Never mind!'
       go_back: 'Go Back'
+      duplicate: 'Duplicate'
 
     flash:
       coupons:
@@ -59,12 +83,6 @@ en:
           invalid_action: 'This action is not valid.'
           removal:
             notice: 'The coupons have been removed!'
-
-    titles:
-      coupons: Coupons
-      coupons_new: New Coupon
-      coupons_edit: Edit Coupon
-      coupons_remove: Remove Coupon
 
     labels:
       coupon:

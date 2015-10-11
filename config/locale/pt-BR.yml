@@ -3,18 +3,41 @@ pt-BR:
     formats:
       coupon: '%d/%m/%Y'
 
-  coupons:
-    paginate:
-      previous: 'Página anterior'
-      next: 'Próxima página'
-      page: 'Página %{page}'
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Cupons
+          new: Novo Cupom
+          edit: Editar Cupom
+          remove: Remover Cupom
+          duplicate: Duplicar Cupom
 
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Página anterior'
+    next: 'Próxima página'
+    page: 'Página %{page}'
+
+  coupons:
     new_coupon_button: 'Criar Cupom'
     are_you_sure_you_want_to_remove_html: >
       Tem certeza que quer remover este cupom de desconto?
     you_cant_undo_removal_html: >
       Todos os rastreamentos de uso de cupons também serão removidos.
       <strong>Não será possível desfazer esta ação.</strong>
+
+    blank_slate:
+      no_coupons: Sem cupons criados
+      no_coupons_description: Você ainda não criou nenhum cupom. É aqui que eles serão exibidos.
 
     selected_rules:
       one: '${count} cupom selecionado'
@@ -43,9 +66,10 @@ pt-BR:
     actions:
       edit: 'Editar'
       remove: 'Remover'
-      confirm: "Sim, tenho certeza!"
-      cancel: "Mudei de ideia!"
+      confirm: 'Sim, tenho certeza!'
+      cancel: 'Mudei de ideia!'
       go_back: 'Voltar'
+      duplicate: 'Duplicar'
 
     flash:
       coupons:
@@ -59,12 +83,6 @@ pt-BR:
           invalid_action: 'Esta ação é inválida.'
           removal:
             notice: 'Os cupons foram removidos.'
-
-    titles:
-      coupons: Cupons
-      coupons_new: Novo Cupom
-      coupons_edit: Editar Cupom
-      coupons_remove: Remover Cupom
 
     labels:
       coupon:

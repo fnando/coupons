@@ -1,11 +1,10 @@
 module Coupons
-  require 'paginate/compat'
-
   require 'coupons/version'
   require 'coupons/engine'
   require 'coupons/configuration'
   require 'coupons/generator'
   require 'coupons/helpers'
+  require 'coupons/collection'
   require 'coupons/globalid_serializer'
   require 'coupons/resolver'
   require 'coupons/models/coupon'
@@ -15,10 +14,17 @@ module Coupons
   require 'coupons/finders/first_available'
   require 'coupons/finders/smaller_discount'
   require 'coupons/finders/larger_discount'
-  require 'coupons/paginate_renderer'
+
+  begin
+    require 'paginate'
+    require 'coupons/paginate'
+  rescue LoadError
+  end
 
   require 'autoprefixer-rails'
   require 'sass-rails'
+
+  require 'page_meta'
 
   class << self
     # Set the Coupons configuration.

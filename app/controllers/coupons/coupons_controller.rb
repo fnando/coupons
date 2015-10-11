@@ -11,7 +11,8 @@ class Coupons::CouponsController < Coupons::ApplicationController
   end
 
   def index
-    @coupons = Coupon.paginate(page: params[:page], size: 50)
+    paginator = Coupons.configuration.paginator
+    @coupons = Coupons::Collection.new(paginator.call(Coupon.order(created_at: :desc), params[:page]))
   end
 
   def new
@@ -31,6 +32,13 @@ class Coupons::CouponsController < Coupons::ApplicationController
 
   def edit
     @coupon = Coupon.find(params[:id])
+  end
+
+  def duplicate
+    existing_coupon = Coupon.find(params[:id])
+    attributes = existing_coupon.attributes.symbolize_keys.slice(:description, :valid_from, :valid_until, :redemption_limit, :amount, :type)
+    @coupon = Coupon.new(attributes)
+    render :new
   end
 
   def update

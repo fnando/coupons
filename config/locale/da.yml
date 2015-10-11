@@ -1,0 +1,114 @@
+---
+da:
+  date:
+    formats:
+      coupon: '%b %d, %Y'
+
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Rabatkoder
+          new: Ny rabatkode
+          edit: Redigér rabatkode
+          remove: Slet rabatkode
+          duplicate: Duplikat rabatkode
+
+  coupons:
+    paginate:
+      previous: 'Forrige side'
+      next: 'Næste side'
+      page: 'Side %{page}'
+
+    new_coupon_button: 'Opret rabatkode'
+    are_you_sure_you_want_to_remove_html: >
+      Er du sikker på at du vil slette denne rabatkode?
+    you_cant_undo_removal_html: >
+      Alle gemte indløsninger vil også blive slettet.
+      <strong>Du kan ikke fortryde dette.</strong>
+
+    selected_rules:
+      one: '${count} rabatkode valgt'
+      other: '${count} rabatkoder valgt'
+
+    'off':
+      amount_html: '<span class="amount">%{amount} kr. rabat</span>'
+      percentage_html: '<span class="percentage">%{amount}% rabat</span>'
+
+    redeemed_html:
+      zero: <span class="mute">Ikke endnu</span>
+      one: '%{count}/<span class="limit">%{limit}</span>'
+      other: '%{count}/<span class="limit">%{limit}</span>'
+
+    limit_html:
+      zero: '<span class="infinite">∞</span>'
+      one: '%{count}'
+      other: '%{count}'
+
+    columns:
+      description: 'Beskrivelse'
+      discount: 'Rabat'
+      redeemed: 'Indløst'
+      expiration: 'Udløb'
+
+    actions:
+      edit: 'Redigér'
+      remove: 'Slet'
+      confirm: "Ja, jeg er sikker!"
+      cancel: "Annullér"
+      go_back: 'Gå tilbage'
+
+    flash:
+      coupons:
+        create:
+          notice: Rabatkoden er oprettet
+        update:
+          notice: Rabatkoden er opdateret
+        destroy:
+          notice: Rabatkoden er slettet
+        batch:
+          invalid_action: 'Denne handling er ikke gyldig.'
+          removal:
+            notice: 'Rabatkoderne er slettet'
+
+    labels:
+      coupon:
+        description: 'Beskrivelse'
+        redemption_limit: 'Max. antal indløsninger'
+        type: 'Type'
+        amount: 'Beløb'
+        code: 'Rabatkode'
+        valid_from: 'Gældende fra'
+        valid_until: 'Gældende til'
+
+    hints:
+      coupon:
+        type: 'Angiv hvordan rabatten skal fratrækkes denne rabatkode.'
+        code: 'Kunden indtaster denne kode i forbindelse med købet.'
+        description: 'Beskriv denne kode, så du kan huske hvorfor den eksisterer.'
+        redemption_limit: 'Sæt evt. en grænse for antal indløsninger på denne rabatkode. 0 betyder ubegrænset antal indløsninger.'
+        amount: 'Dette er det reelle rabatbeløb. 0–100 for procentsatser, 0 eller større (hele tal) for faste beløber.'
+        valid_from: 'Hvornår skal denne rabatkode kunne indløses fra.'
+        valid_until: 'Hvornår kan denne rabatkode ikke længere indløses. Hvis du ikke sætter denne dato, kan rabatkoden indløses forevigt.'
+
+    form_error_description: 'Ret venligst fejl i formen:'
+
+    coupon:
+      type:
+        amount: 'Beløb (DKK)'
+        percentage: 'Procentsats (%)'
+
+      buttons:
+        create: 'Opret rabatkode'
+        edit: 'Opdatér rabatkode'
+        remove_selected: 'Slet valgte rabatkoder'
+
+      no_description: 'Ingen beskrivelse'
+      dont_expire: Aldrig
+
+  activerecord:
+    errors:
+      messages:
+        coupon_already_expired: skal være dags dato eller en dato herefter
+        coupon_valid_until: skal være magen til startdato eller en dato herefter.

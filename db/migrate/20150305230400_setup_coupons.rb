@@ -10,7 +10,13 @@ class SetupCoupons < ActiveRecord::Migration
       t.integer :amount, null: false, default: 0
       t.string :type, null: false
       t.timestamps null: false
-      t.text :attachments, null: false, default: '{}'
+
+      case ActiveRecord::Base.connection.adapter_name
+      when 'Mysql2'
+        t.text :attachments
+      else
+        t.text :attachments, null: false, default: '{}'
+      end
     end
 
     create_table :coupon_redemptions do |t|

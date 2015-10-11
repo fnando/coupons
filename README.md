@@ -16,6 +16,14 @@ Add this line to your application's Gemfile:
 gem 'coupons'
 ```
 
+You also need one pagination library. You can choose between [paginate](https://github.com/fnando/paginate) or [kaminari](https://github.com/amatsuda/kaminari), so make sure one of these libs is added to your Gemfile as well.
+
+```ruby
+gem 'paginate'
+# or
+gem 'kaminari'
+```
+
 And then execute:
 
     $ bundle
@@ -78,7 +86,7 @@ To redeem the coupon you can use `Coupon.redeem`.
 Coupons.redeem('RAILSCONF15', amount: 600.00)
 #=> {:amount => 600.0, :discount => 100.0, :total => 500.0}
 
-coupon = Copouns::Models::Coupon.last
+coupon = Coupons::Models::Coupon.last
 
 coupon.redemptions_count
 #=> 1
@@ -141,7 +149,7 @@ Coupons.configure do |config|
   config.authorizer = proc do |controller|
     if Rails.env.production?
       controller.render(
-        text: 'Coupouns: not enabled in production environments',
+        text: 'Coupons: not enabled in production environments',
         status: 403
       )
     end

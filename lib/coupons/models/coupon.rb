@@ -1,8 +1,6 @@
 module Coupons
   module Models
     class Coupon < ActiveRecord::Base
-      include Paginate::Extension
-
       # Allow using `type` as a column.
       self.inheritance_column = nil
 
@@ -13,6 +11,9 @@ module Coupons
       after_initialize do
         self.code ||= Coupons.configuration.generator.call
         self.valid_from ||= Date.current
+
+        attachments_will_change!
+        write_attribute :attachments, {} if attachments.empty?
       end
 
       has_many :redemptions, class_name: 'Coupons::Models::CouponRedemption'
