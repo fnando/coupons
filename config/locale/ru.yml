@@ -1,0 +1,126 @@
+ru:
+  date:
+    formats:
+      coupon: '%b %d, %Y'
+
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Купоны
+          new: Создать купон
+          edit: Редактировать купон
+          remove: Удалить купон
+          duplicate: Скопировать купон
+
+  views:
+    pagination:
+      first: "&laquo; В начало"
+      last: "В конец &raquo;"
+      previous: "&lsaquo; Назад"
+      next: "Вперед &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Предыдущая страница'
+    next: 'Следующая страница'
+    page: 'Страница %{page}'
+
+  coupons:
+    new_coupon_button: 'Создать купон'
+    are_you_sure_you_want_to_remove_html: >
+      Уверены, что хотите удалить этот купон?
+    you_cant_undo_removal_html: >
+      Вся история использования купона будет также удалена.
+      <strong>Вы не сможете отменить это действие</strong>
+
+    blank_slate:
+      no_coupons: Нет купонов
+      no_coupons_description: У вас пока нет ни одного купона.
+
+    selected_rules:
+      one: '{count} руб. купон выбран'
+      other: '{count} руб. купонов выбрано'
+
+    'off':
+      amount_html: '<span class="amount">скидка %{amount} руб.</span>'
+      percentage_html: '<span class="percentage">скидка %{amount}% руб.</span>'
+
+    redeemed_html:
+      zero: <span class="mute">Пока нет</span>
+      one: '%{count}/<span class="limit">%{limit}</span>'
+      other: '%{count}/<span class="limit">%{limit}</span>'
+
+    limit_html:
+      zero: '<span class="infinite">∞</span>'
+      one: '%{count}'
+      other: '%{count}'
+
+    columns:
+      description: 'Описание'
+      discount: 'Скидка'
+      redeemed: 'Оплачено'
+      expiration: 'Истекает'
+
+    actions:
+      edit: 'Изменить'
+      remove: 'Удалить'
+      confirm: "Да, я увреен!"
+      cancel: 'Нет проблем!'
+      go_back: 'Назад'
+      duplicate: 'Скопировать'
+
+    flash:
+      coupons:
+        create:
+          notice: Купон был успешно создан!
+        update:
+          notice: Купон был успешно изменен!
+        destroy:
+          notice: Купон был успешно удален!
+        batch:
+          invalid_action: 'Это действие невозможно'
+          removal:
+            notice: 'Купоны были успешно удалены!'
+
+    labels:
+      coupon:
+        description: 'Описание'
+        redemption_limit: 'Лимит использований'
+        type: 'Тип'
+        amount: 'Размер'
+        code: 'Код купона'
+        valid_from: 'Действителен с'
+        valid_until: 'Действителен до'
+
+    hints:
+      coupon:
+        type: 'Выберите, как этот купон будет применять скидку.'
+        code: 'Этот код будет использован для применения скидки.'
+        description: 'Опишите этот купон, чтобы потом вспомнить, для чего он.'
+        redemption_limit: 'Укажите, сколько раз купон может быть применен. Ноль означает отсутствие лимита.'
+        amount: 'Это размер скидки. 0-100 для относительного купона, ноль или положительное число для абсолютного купона.'
+        valid_from: 'Когда этот купон начнет быть действительным.'
+        valid_until: 'Когда этот купон перестанет быть действительным. По умолчанию – никогда.'
+
+    form_error_description: 'Перепроверьте форму, пожалуйста:'
+
+    coupon:
+      type:
+        amount: 'Размер (руб.)'
+        percentage: 'Проценты (%)'
+
+      buttons:
+        create: 'Создать купон'
+        edit: 'Изменить купон'
+        remove_selected: 'Удалить купоны'
+
+      no_description: 'Описание отсутствует'
+      dont_expire: 'Никогда'
+
+  activerecord:
+    errors:
+      messages:
+        coupon_already_expired: 'Должно быть не раньше чем сегодня'
+        coupon_valid_until: 'Должно быть не раньше чем дата, с котрой купон действителен'
