@@ -62,7 +62,7 @@ module Coupons
       end
 
       def has_available_redemptions?
-        redemptions_count.zero? || redemptions_count < redemption_limit
+        redemption_limit.zero? || redemptions_count < redemption_limit
       end
 
       def started?

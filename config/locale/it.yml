@@ -1,0 +1,126 @@
+it:
+  date:
+    formats:
+      coupon: '%b %d, %Y'
+
+  page_meta:
+    titles:
+      base: "%{value}"
+      coupons:
+        coupons:
+          index: Coupons
+          new: Nuovo Coupon
+          edit: Modifica Coupon
+          remove: Elimina Coupon
+          duplicate: Duplica Coupon
+
+  views:
+    pagination:
+      first: "&laquo; Primo"
+      last: "Ultimo &raquo;"
+      previous: "&lsaquo; Precedente"
+      next: "Successivo &rsaquo;"
+      truncate: "&hellip;"
+
+  paginate:
+    previous: 'Pagina precedente'
+    next: 'Pagina Successiva'
+    page: 'Pagina %{page}'
+
+  coupons:
+    new_coupon_button: 'Crea Coupon'
+    are_you_sure_you_want_to_remove_html: >
+      Sei sicuro di voler rimuovere questo coupon?
+    you_cant_undo_removal_html: >
+      All redemption trackings will be removed as well.
+      <strong>You won't be able to undo this action.</strong>
+
+    blank_slate:
+      no_coupons: Nessun Coupons
+      no_coupons_description: Non hai ancora creato nessun coupon. Qui é dove appariranno.
+
+    selected_rules:
+      one: '${count} coupon selezionato'
+      other: '${count} coupons selezionati'
+
+    'off':
+      amount_html: '<span class="amount">$%{amount} OFF</span>'
+      percentage_html: '<span class="percentage">%{amount}% OFF</span>'
+
+    redeemed_html:
+      zero: <span class="mute">Non ancora</span>
+      one: '%{count}/<span class="limit">%{limit}</span>'
+      other: '%{count}/<span class="limit">%{limit}</span>'
+
+    limit_html:
+      zero: '<span class="infinite">∞</span>'
+      one: '%{count}'
+      other: '%{count}'
+
+    columns:
+      description: 'Descrizione'
+      discount: 'Sconto'
+      redeemed: 'Riscattato'
+      expiration: 'Scadenza'
+
+    actions:
+      edit: 'Modifica'
+      remove: 'Elimina'
+      confirm: "Sì, sono sicuro!"
+      cancel: 'No'
+      go_back: 'Indietro'
+      duplicate: 'Duplica'
+
+    flash:
+      coupons:
+        create:
+          notice: Il coupon è stato creato!
+        update:
+          notice: Il coupon è stato aggiornato!
+        destroy:
+          notice: Il coupon è stato rimosso!
+        batch:
+          invalid_action: 'Questa azione non è valida!'
+          removal:
+            notice: 'I coupon sono stati rimossi'
+
+    labels:
+      coupon:
+        description: 'Descrizione'
+        redemption_limit: 'Limite riscatti'
+        type: 'Tipo'
+        amount: 'Prezzo'
+        code: 'Codice sconto'
+        valid_from: 'Valido dal'
+        valid_until: 'Valido fino al'
+
+    hints:
+      coupon:
+        type: 'Seleziona come dovrà funzionare lo sconto.'
+        code: 'Il cliente dovrà fornire questo codice.'
+        description: 'Descrivi questo coupon così ricorderai a cosa serve'
+        redemption_limit: 'Setta quante volte il coupon può essere usato. Inserisci zero per infinito'
+        amount: 'Questo é lo sconto. 0-100 per lo sconto percentuale, zero o numero positivo per sconto fisso.'
+        valid_from: 'Da quando il coupon sará disponibile.'
+        valid_until: 'Data di scadenza coupon. Per default senza scadenza.'
+
+    form_error_description: 'Ci sono errori nel form:'
+
+    coupon:
+      type:
+        amount: 'Prezzo ($)'
+        percentage: 'Percentuale (%)'
+
+      buttons:
+        create: 'Crea Coupon'
+        edit: 'Aggiorna Coupon'
+        remove_selected: 'Rimuovi Coupons'
+
+      no_description: 'Nessuna descrizione'
+      dont_expire: Mai
+
+  activerecord:
+    errors:
+      messages:
+        coupon_already_expired: Deve essere uguale o maggiore di oggi
+        coupon_valid_until: Deve essere maggiore o uguale alla data di inizio validità.
