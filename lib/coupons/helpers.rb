@@ -32,7 +32,8 @@ module Coupons
       coupon = find(code, options)
       return options unless coupon
 
-      coupon.redemptions.create!(options.slice(:user_id, :order_id))
+      redempted = coupon.redemptions.create!(options.slice(:user_id, :order_id))
+      options.merge!(redempted_id: redempted.id)
       coupon.apply(options)
     end
 

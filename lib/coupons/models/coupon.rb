@@ -61,8 +61,9 @@ module Coupons
         valid_until && valid_until <= Date.current
       end
 
+      # without redemption limit OR redeemed count less than redemption limit
       def has_available_redemptions?
-        redemptions_count.zero? || redemptions_count < redemption_limit
+        redemption_limit.zero? || redemptions_count < redemption_limit
       end
 
       def started?
