@@ -67,4 +67,10 @@ describe Coupons::Helpers do
     maker.redeem(coupon.code, order_id: 1234)
     expect(coupon.redemptions.last.order_id).to eq('1234')
   end
+
+  it 'return coupon redemption id' do
+    coupon = maker.create(amount: 10, type: 'amount')
+    options = maker.redeem(coupon.code, order_id: 1234)
+    expect(coupon.redemptions.last.id).to eq(options[:redempted_id])
+  end
 end

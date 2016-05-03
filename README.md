@@ -83,10 +83,11 @@ Coupons.apply('invalid', amount: 100.00)
 To redeem the coupon you can use `Coupon.redeem`.
 
 ```ruby
-Coupons.redeem('RAILSCONF15', amount: 600.00)
-#=> {:amount => 600.0, :discount => 100.0, :total => 500.0}
+options = Coupons.redeem('RAILSCONF15', amount: 600.00)
+#=> {:amount => 600.0, :discount => 100.0, :total => 500.0, :redempted_id => 1234}
 
-coupon = Coupons::Models::Coupon.last
+Coupons::Models::CouponRedemption.find options[:redempted_id]
+# => #<Coupons::Models::CouponRedemption id: 1234, coupon_id: 1, user_id: nil, order_id: nil, created_at: "2016-05-03 13:05:51", updated_at: "2016-05-03 13:05:51">
 
 coupon.redemptions_count
 #=> 1
