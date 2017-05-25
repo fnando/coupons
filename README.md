@@ -31,6 +31,11 @@ And then execute:
 Or install it yourself as:
 
     $ gem install coupons
+    
+Once the gem is installed, you have to run the migrations, by doing:
+
+	$ rake db:migrate
+
 
 ## Usage
 
